@@ -42,8 +42,19 @@ If you need to customize the host or port, you may pass an object to `.serve()`:
 
 ```js
 mix.sass('resources/sass/app.scss', 'public/css').serve({
-  host: '127.0.0.1',
-  port: '3000',
+	host: '127.0.0.1',
+	port: '3000',
+});
+```
+
+If you need to make it serve from php built-in WebServer :
+
+```js
+mix.sass('resources/sass/app.scss', 'public/css').serve({
+	artisan: false, // required. false for PHP WebServer BuiltIn
+	host: 'localhost',
+	port: '8080',
+	target: 'public', // optional
 });
 ```
 
@@ -55,7 +66,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
-- [Adam Wathan](https://adamwathan.me) (Adam is the inspiration behind this package (https://twitter.com/adamwathan/status/1205840365120561153))
+-   [Adam Wathan](https://adamwathan.me) (Adam is the inspiration behind this package (https://twitter.com/adamwathan/status/1205840365120561153))
 
 ## License
 
