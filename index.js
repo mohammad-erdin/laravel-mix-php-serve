@@ -8,10 +8,11 @@ class Serve {
 
 	register(userConfig) {
 		const defaultConfig = {
-			target: true,
+			artisan: true,
 			host: '127.0.0.1',
 			port: '8000',
 			target: null,
+			verbose: true,
 		};
 
 		if (userConfig !== undefined) {
