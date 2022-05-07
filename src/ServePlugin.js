@@ -6,7 +6,8 @@ class ServePlugin {
 	}
 
 	apply(compiler) {
-		compiler.hooks.watchRun.tap('ServePlugin', (compilation) => {
+        console.info(compiler.hooks);
+		compiler.hooks.initialize.tap('ServePlugin', (compilation) => {
 			console.log(`Serving application at: http://${this.serveConfig.host}:${this.serveConfig.port}`);
 
 			if (this.serveConfig.artisan) {
